@@ -9,9 +9,11 @@
     </head>
     <body>
         <div id="list">
-            <ul> Сделать домашку </ul>
-            <ul> Искупать кота </ul>
-            <ul> Купить сельдерей </ul>
+            <ul> 
+                <li> Сделать домашку </li>
+            <li> Искупать кота </li>
+            <li> Купить сельдерей </li>
+                </ul>
         </div>
 
         <div id="buttons">
@@ -22,7 +24,8 @@
         </div>
         <div id="forms">
             <input type="text" placeholder="еще одно важное дельце" onchange="addTask()" size=50>
-      
+            <input type="submit" value="Добавить дело" onchange="addTask()" />
+
         </div>
 
         <script defer src="todo.js"></script>
