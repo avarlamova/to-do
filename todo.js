@@ -1,13 +1,13 @@
-﻿let tasks = ["Сделать домашку", "Искупать кота", "Купить сельдерей"];
+let tasks = document.querySelectorAll("li");
 
-const input = document.querySelector("input[type='text']");
 
 function addTask() {
-    const newTask = document.createElement("li");
-    document.body.append(newTask);
+    const newItem = document.createElement("li");
+    newItem.textContent = document.querySelector("input[type='text']").value;
+    list.append(newItem);
    }
 function clearList () {
-  
+      list.remove();
 }
 
     function getHelp() {
