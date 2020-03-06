@@ -8,8 +8,8 @@
       
     </head>
     <body>
-        <div id="list">
-            <ul> 
+        <div>
+            <ul id="list"> 
                 <li> Сделать домашку </li>
             <li> Искупать кота </li>
             <li> Купить сельдерей </li>
@@ -23,7 +23,7 @@
             <button onclick="getHelp()"> Как это работает <img src="https://s1.iconbird.com/ico/0612/MustHave/w256h2561339195771Help256x256.png"></button>
         </div>
         <div id="forms">
-            <input type="text" placeholder="еще одно важное дельце" onchange="addTask()" size=50>
+            <input type="text" id="input" placeholder="еще одно важное дельце" onchange="addTask()" size=50>
             <input type="submit" value="Добавить дело" onchange="addTask()" />
 
         </div>
