@@ -2,6 +2,29 @@
     background:azure;
 }
 #buttons {
-    background:black;
     padding: 20px;
+    width: 200px;
+    height: 200px;
+}
+
+#help {
+    background-color: #87CEEB;
+    text-align: center;
+    border: 2px;
+    top: 50%;
+    left: 50%;
+    width: 294px;
+    height: 100px;
+    position: absolute;
+    margin-top: -225px;
+    margin-left: -225px;
+}
+
+#closebutton {
+    color: red;
+    top: 50%;
+    left: 68%;
+    position: absolute;
+    margin-top: -225px;
+    margin-left: -225px;
 }
