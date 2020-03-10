@@ -12,8 +12,17 @@ function clearList () {
 }
 
     function getHelp() {
-const help = document.createElement("div");
-    help.classList.add("help");
+    const help = document.createElement("div");
+    help.id = "help";
     help.innerHTML = 'Здесь будет справка';
-    alert(help);
-    }
+    const closeButton = document.createElement("button");
+    closeButton.innerHTML = "Закрыть";
+    closeButton.id = "closebutton";
+    buttons.append(help);
+    buttons.append(closeButton);
+}
+
+
+document.getElementById("closebutton").onclick = function () {
+    //document.getElementByClassName("help").hidden = true;
+}
