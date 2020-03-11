@@ -1,28 +1,30 @@
-let tasks = document.querySelectorAll("li");
+const tasks = document.querySelectorAll("li");
 
-document.getElementById("input").onchange = function addTask (){ 
+document.getElementById("input").addEventListener('change', function addTask() { 
     const newItem = document.createElement("li");
-    newItem.textContent = document.getElementById("input").value;
+    newItem.textContent = input.value;
+    newItem.id = "item";
     list.append(newItem);
-    document.getElementById("input").value = "";
-
+    input.value = "";
    }
-function clearList () {
-      list.remove();
-}
+    )
 
-    function getHelp() {
+function getHelp() {
     const help = document.createElement("div");
     help.id = "help";
     help.innerHTML = 'Здесь будет справка';
-    const closeButton = document.createElement("button");
-    closeButton.innerHTML = "Закрыть";
-    closeButton.id = "closebutton";
+    const closebutton = document.createElement("button");
+    closebutton.innerHTML = "Закрыть";
+    closebutton.id = "closebutton";
     buttons.append(help);
-    buttons.append(closeButton);
+    buttons.append(closebutton);
+    closebutton.addEventListener("click", function hide() {
+        help.hidden = true;
+        closebutton.hidden = true;
+    }
+        )
 }
 
-
-document.getElementById("closebutton").onclick = function () {
-    //document.getElementByClassName("help").hidden = true;
+function clearList() {
+    list.remove();
 }
