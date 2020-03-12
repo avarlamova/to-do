@@ -28,3 +28,11 @@ function getHelp() {
 function clearList() {
     list.remove();
 }
+
+window.addEventListener("keydown", function checkEscape(e) {
+    if (e.keyCode == 27) {
+        help.hidden = true;
+        closebutton.hidden = true;
+    }
+}, 
+);
