@@ -1,5 +1,8 @@
-const tasks = document.querySelectorAll("li");
+const tasks = document.getElementById("item");
 
+    tasks[i].addEventListener("click", function removeTask () {
+        tasks[i].remove();
+    })
 document.getElementById("input").addEventListener('change', function addTask() { 
     const newItem = document.createElement("li");
     newItem.textContent = input.value;
