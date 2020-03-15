@@ -1,13 +1,18 @@
-const tasks = document.getElementById("item");
+const tasks = document.getElementById("list");
 
     tasks[i].addEventListener("click", function removeTask () {
         tasks[i].remove();
     })
 document.getElementById("input").addEventListener('change', function addTask() { 
-    const newItem = document.createElement("li");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    const newItem = document.createElement("span");
     newItem.textContent = input.value;
     newItem.id = "item";
+    const br = document.createElement('br')
+    list.append(checkbox);
     list.append(newItem);
+    list.append(br);
     input.value = "";
    }
     )
