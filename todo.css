@@ -6,7 +6,10 @@
     width: 200px;
     height: 200px;
 }
-
+.strike
+{
+    text-decoration:line-through;
+}
 #help {
     background-color: #87CEEB;
     text-align: center;
