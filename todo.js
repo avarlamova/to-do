@@ -1,21 +1,31 @@
 const tasks = document.getElementById("list");
 
-    tasks[i].addEventListener("click", function removeTask () {
-        tasks[i].remove();
-    })
-document.getElementById("input").addEventListener('change', function addTask() { 
-    const checkbox = document.createElement("input");
+window.addEventListener("keydown", function checkEscape(e) {
+    if (e.keyCode == 27) {
+        help.hidden = true;
+        closebutton.hidden = true;
+    }
+},
+);
+
+document.getElementById("input").addEventListener('change', function addTask() {
+    let li = document.createElement('li');
+    let checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.id = "checkbox";
     const newItem = document.createElement("span");
     newItem.textContent = input.value;
     newItem.id = "item";
-    const br = document.createElement('br')
+    list.append(li);
     list.append(checkbox);
     list.append(newItem);
-    list.append(br);
     input.value = "";
-   }
+    }
     )
+
+function taskDone() {
+    document.getElementById("item").className = "strike";
+}
 
 function getHelp() {
     const help = document.createElement("div");
