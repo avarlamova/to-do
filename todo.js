@@ -1,4 +1,5 @@
 const tasks = document.getElementById("list");
+let taskDone = document.getElementById("checkbox").checked;
 
 window.addEventListener("keydown", function checkEscape(e) {
     if (e.keyCode == 27) {
@@ -11,6 +12,8 @@ window.addEventListener("keydown", function checkEscape(e) {
 document.getElementById("input").addEventListener('change', function addTask() {
     let li = document.createElement('li');
     let checkbox = document.createElement("input");
+    let edit = document.createElement("button");
+    edit.innerHTML = 'Редактировать';
     checkbox.type = "checkbox";
     checkbox.id = "checkbox";
     const newItem = document.createElement("span");
