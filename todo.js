@@ -45,6 +45,16 @@ function getHelp() {
     }
         )
 }
+function taskDone() {
+    let onetask = document.querySelectorAll("input:checked");
+       for (i = 0; i < onetask.length; i++) {
+        let item = onetask[i];
+           if (item.checked) {
+               document.querySelectorAll("span").className = "strike";
+           }
+           
+    }
+    }
 
 function clearList() {
     list.remove();
