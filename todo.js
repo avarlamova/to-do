@@ -12,23 +12,36 @@ window.addEventListener("keydown", function checkEscape(e) {
 document.getElementById("input").addEventListener('change', function addTask() {
     let li = document.createElement('li');
     let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
     let edit = document.createElement("button");
     edit.innerHTML = 'Редактировать';
     checkbox.type = "checkbox";
     checkbox.id = "checkbox";
+     let removeItem = document.createElement("button");
+    removeItem.innerHTML = "Удалить";
+    removeItem.onclick = function deleteElement() {
+        newItem.remove();
+        checkbox.remove();
+        edit.remove();
+        removeItem.remove();
+        }
+    let edit = document.createElement("button");
+    edit.innerHTML = 'Редактировать';
+    edit.onclick = function editNew() {
+        newItem.innerHTML = prompt("Отредактируйте запись");
+    }
     const newItem = document.createElement("span");
     newItem.textContent = input.value;
+    newItem.className = "changeifchecked";
     newItem.id = "item";
     list.append(li);
     list.append(checkbox);
     list.append(newItem);
+    list.append(edit);
+    list.append(removeItem);
     input.value = "";
     }
     )
-
-function taskDone() {
-    document.getElementById("item").className = "strike";
-}
 
 function getHelp() {
     const help = document.createElement("div");
@@ -45,20 +58,12 @@ function getHelp() {
     }
         )
 }
-function taskDone() {
-    let onetask = document.querySelectorAll("input:checked");
-       for (i = 0; i < onetask.length; i++) {
-        let item = onetask[i];
-           if (item.checked) {
-               document.querySelectorAll("span").className = "strike";
-           }
-           
-    }
-    }
 
-function clearList() {
-    list.remove();
-}
+document.getElementById("clearButton").addEventListener("click", function clearList() {
+    list.innerHTML = "";
+    }
+)
+
 
 window.addEventListener("keydown", function checkEscape(e) {
     if (e.keyCode == 27) {
