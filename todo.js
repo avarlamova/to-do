@@ -1,13 +1,5 @@
-const tasks = document.getElementById("list");
-let taskDone = document.getElementById("checkbox").checked;
-
-window.addEventListener("keydown", function checkEscape(e) {
-    if (e.keyCode == 27) {
-        help.hidden = true;
-        closebutton.hidden = true;
-    }
-},
-);
+const tasks = document.querySelector("list");
+let taskDone = document.getElementsByTagName("checkbox").checked;
 
 document.getElementById("input").addEventListener('change', function addTask() {
     let li = document.createElement('li');
@@ -17,7 +9,8 @@ document.getElementById("input").addEventListener('change', function addTask() {
     edit.innerHTML = 'Редактировать';
     checkbox.type = "checkbox";
     checkbox.id = "checkbox";
-     let removeItem = document.createElement("button");
+
+    let removeItem = document.createElement("button");
     removeItem.innerHTML = "Удалить";
     removeItem.onclick = function deleteElement() {
         newItem.remove();
@@ -25,7 +18,8 @@ document.getElementById("input").addEventListener('change', function addTask() {
         edit.remove();
         removeItem.remove();
         }
-    let edit = document.createElement("button");
+
+  //  let edit = document.createElement("button");
     edit.innerHTML = 'Редактировать';
     edit.onclick = function editNew() {
         newItem.innerHTML = prompt("Отредактируйте запись");
@@ -50,6 +44,7 @@ function getHelp() {
     const closebutton = document.createElement("button");
     closebutton.innerHTML = "Закрыть";
     closebutton.id = "closebutton";
+    let buttons = document.getElementById('buttons')
     buttons.append(help);
     buttons.append(closebutton);
     closebutton.addEventListener("click", function hide() {
@@ -59,16 +54,18 @@ function getHelp() {
         )
 }
 
-document.getElementById("clearButton").addEventListener("click", function clearList() {
+document.getElementById("clear-button").addEventListener("click", function clearList() {
     list.innerHTML = "";
     }
 )
 
 
+//close info
 window.addEventListener("keydown", function checkEscape(e) {
     if (e.keyCode == 27) {
         help.hidden = true;
         closebutton.hidden = true;
     }
-}, 
+},
 );
+
