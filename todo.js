@@ -1,18 +1,18 @@
-const tasks = document.querySelector("list");
+let tasks = document.getElementById("list");
 let taskDone = document.getElementsByTagName("checkbox").checked;
 
 document.getElementById("input").addEventListener('change', function addTask() {
     let li = document.createElement('li');
     let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-    let edit = document.createElement("button");
-    edit.innerHTML = 'Редактировать';
+    checkbox.type = "checkbox";
+    let editbtn = document.createElement("button");
+    editbtn.innerHTML = 'Редактировать';
     checkbox.type = "checkbox";
     checkbox.id = "checkbox";
 
     let removeItem = document.createElement("button");
     removeItem.innerHTML = "Удалить";
-    removeItem.onclick = function deleteElement() {
+    removeItem.onclick = function deleteEl() {
         newItem.remove();
         checkbox.remove();
         edit.remove();
@@ -21,7 +21,7 @@ document.getElementById("input").addEventListener('change', function addTask() {
 
   //  let edit = document.createElement("button");
     edit.innerHTML = 'Редактировать';
-    edit.onclick = function editNew() {
+    edit.onclick = function edit() {
         newItem.innerHTML = prompt("Отредактируйте запись");
     }
     const newItem = document.createElement("span");
@@ -37,33 +37,31 @@ document.getElementById("input").addEventListener('change', function addTask() {
     }
     )
 
-function getHelp() {
-    const help = document.createElement("div");
-    help.id = "help";
-    help.innerHTML = 'Здесь будет справка';
-    const closebutton = document.createElement("button");
-    closebutton.innerHTML = "Закрыть";
-    closebutton.id = "closebutton";
-    let buttons = document.getElementById('buttons')
-    buttons.append(help);
-    buttons.append(closebutton);
-    closebutton.addEventListener("click", function hide() {
-        help.hidden = true;
-        closebutton.hidden = true;
-    }
-        )
-}
-
 document.getElementById("clear-button").addEventListener("click", function clearList() {
     list.innerHTML = "";
     }
 )
 
 
-//close info
-window.addEventListener("keydown", function checkEscape(e) {
+//open and close info
+    
+let help = document.getElementById('get-help');
+let info = document.getElementById('info');
+let helpbtn = document.getElementById('help-btn');
+
+help.addEventListener("click", function openInfo(){
+        info.style.display = "block";
+        helpbtn.style.display = "block";
+    })
+
+function closeInfo () {
+    info.style.display = "none";
+    helpbtn.style.display = "none";
+}
+
+window.addEventListener("keydown", function(e) {
     if (e.keyCode == 27) {
-        help.hidden = true;
+        help.style.visible = true;
         closebutton.hidden = true;
     }
 },

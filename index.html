@@ -9,23 +9,35 @@
 <body>
     <div>
         <ul id="list">
-            <li><input type="checkbox" /><span class="changeifchecked">Сделать домашку</span> </li>
-            <li><input type="checkbox" /><span class="changeifchecked">Искупать кота</span> </li>
+            <li>
+                <input type="checkbox" /><span class="changeifchecked">Сделать домашку</span> 
+                <button onclick="edit()">Редактировать</button>
+                <button onclick="deleteEl()">Удалить</button>
+            </li>
+            <li><input type="checkbox" />
+                <span class="changeifchecked">Искупать кота</span> 
+                <button onclick="edit()">Редактировать</button>
+                <button onclick="deleteEl()">Удалить</button>
+            </li>
         </ul>
     </div>
-
-        <div id="buttons">
+    <div class="buttons">
             <button> Сохранить <img src="https://img.icons8.com/cute-clipart/64/000000/save.png"></button>
             <button id = "clear-button" onclick="clearList()"> Очистить список <img src="https://img.icons8.com/carbon-copy/100/000000/clear-symbol--v1.png" alt = "button to clear list"></button>
-            <button onclick="getHelp()"> Как это работает <img src="https://s1.iconbird.com/ico/0612/MustHave/w256h2561339195771Help256x256.png" alt = "button to get info"></button>
-        </div>
+            <button id = "get-help"> Как это работает <img src="https://s1.iconbird.com/ico/0612/MustHave/w256h2561339195771Help256x256.png" alt = "button to get info"></button>
+    </div>
         
-        <div class="forms">
+    <div class="forms">
             <input type="text" id="input" placeholder="еще одно важное дельце" onchange="addTask()" size=50>
             <input type="submit" value="Добавить дело">
 
-        </div>
-        <script src="todo.js"></script>
-
+    </div>
+    <div id="info">
+        Здесь будет справка
+        <button id="help-btn" onclick="closeInfo()"> 
+            Закрыть 
+        </button>
+    </div>
+<script src="todo.js"></script>
 </body>
 </html>
