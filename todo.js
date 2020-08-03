@@ -1,69 +1,76 @@
-let tasks = document.getElementById("list");
-let taskDone = document.getElementsByTagName("checkbox").checked;
 
-document.getElementById("input").addEventListener('change', function addTask() {
-    let li = document.createElement('li');
-    let checkbox = document.createElement("input");
+const tasks = document.getElementById("list");
+//let taskDone = document.getElementById("checkbox").checked;
+
+//editing the task
+function editTask() {
+    let a = event.target;
+    a.previousSibling.previousSibling.textContent = prompt("Отредактируйте запись");
+}
+
+//deleting the task
+function deleteItem () {
+    let d = event.target;
+    d.parentNode.remove();
+}
+
+//adding new task
+function addTask() {
+    
+    const li = document.createElement('li');
+    const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    let editbtn = document.createElement("button");
-    editbtn.innerHTML = 'Редактировать';
-    checkbox.type = "checkbox";
-    checkbox.id = "checkbox";
-
-    let removeItem = document.createElement("button");
-    removeItem.innerHTML = "Удалить";
-    removeItem.onclick = function deleteEl() {
-        newItem.remove();
-        checkbox.remove();
-        edit.remove();
-        removeItem.remove();
-        }
-
-  //  let edit = document.createElement("button");
-    edit.innerHTML = 'Редактировать';
-    edit.onclick = function edit() {
-        newItem.innerHTML = prompt("Отредактируйте запись");
-    }
+    const textNode = document.createTextNode('');
     const newItem = document.createElement("span");
-    newItem.textContent = input.value;
+    newItem.textContent = ' ' + input.value;
     newItem.className = "changeifchecked";
-    newItem.id = "item";
+
+    const editbtn = document.createElement("button");
+    editbtn.textContent = 'Редактировать';
+    editbtn.className = "edit-btn"
+    checkbox.type = "checkbox";
+    editbtn.onclick = editTask;
+
+    const removebtn = document.createElement("button");
+    removebtn.textContent = "Удалить";
+    removebtn.onclick = deleteItem;
+
     list.append(li);
-    list.append(checkbox);
-    list.append(newItem);
-    list.append(edit);
-    list.append(removeItem);
+    li.append(checkbox);
+    li.append(textNode);
+    li.append(newItem);
+    li.append(editbtn);
+    li.append(removebtn);
     input.value = "";
     }
-    )
 
-document.getElementById("clear-button").addEventListener("click", function clearList() {
+    //adding task on enter
+window.addEventListener("keydown", function(e) {
+        if (e.keyCode == 31) {
+            addTask();
+        }
+    },
+);
+        
+//deleting the whole list
+function clearList() {
     list.innerHTML = "";
     }
-)
-
 
 //open and close info
-    
-let help = document.getElementById('get-help');
-let info = document.getElementById('info');
-let helpbtn = document.getElementById('help-btn');
 
-help.addEventListener("click", function openInfo(){
-        info.style.display = "block";
-        helpbtn.style.display = "block";
-    })
+function openInfo() {    
+    let info = document.getElementById('info');
+    let helpbtn = document.getElementById('help-btn');
+    info.style.display = "block";
+    helpbtn.style.display = "block";
+    }
 
 function closeInfo () {
+    let info = document.getElementById('info');
+    let helpbtn = document.getElementById('help-btn');
     info.style.display = "none";
     helpbtn.style.display = "none";
 }
 
-window.addEventListener("keydown", function(e) {
-    if (e.keyCode == 27) {
-        help.style.visible = true;
-        closebutton.hidden = true;
-    }
-},
-);
 

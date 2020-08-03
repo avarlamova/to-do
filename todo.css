@@ -7,9 +7,14 @@ li {
 }
 
 .buttons {
-    padding: 20px;
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+img {
+    max-height: 100px;
 }
 
 input[type=checkbox]:checked + .changeifchecked {
@@ -20,19 +25,21 @@ input[type=checkbox]:checked + .changeifchecked {
     display: none;
     background-color: #87CEEB;
     text-align: center;
+    font-size: 38px;
     border: 2px;
-    width: 294px;
-    height: 100px;
+    width: auto;
+    height: auto;
     position: absolute;
-    margin-top: 225px;
-    margin-left: 225px;
+    top: 50px;
+    left: 360px;
     border-radius: 30px;
 }
 
 #help-btn {
+    top:0px;
+    left: 0px;
     display: none;
     background: red;
-    position: absolute;
-
 }
+
 

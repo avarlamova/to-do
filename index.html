@@ -10,30 +10,37 @@
     <div>
         <ul id="list">
             <li>
-                <input type="checkbox" /><span class="changeifchecked">Сделать домашку</span> 
-                <button onclick="edit()">Редактировать</button>
-                <button onclick="deleteEl()">Удалить</button>
+                <input type="checkbox" />
+                <span class="changeifchecked">Сделать домашку</span> 
+                <button onclick="editTask()">Редактировать</button>
+                <button onclick="deleteItem()">Удалить</button>
             </li>
-            <li><input type="checkbox" />
+            <li>
+                <input type="checkbox" />
                 <span class="changeifchecked">Искупать кота</span> 
-                <button onclick="edit()">Редактировать</button>
-                <button onclick="deleteEl()">Удалить</button>
-            </li>
+                <button onclick="editTask()">Редактировать</button>
+                <button onclick="deleteItem()">Удалить</button>
+            </li>            
         </ul>
     </div>
     <div class="buttons">
-            <button> Сохранить <img src="https://img.icons8.com/cute-clipart/64/000000/save.png"></button>
-            <button id = "clear-button" onclick="clearList()"> Очистить список <img src="https://img.icons8.com/carbon-copy/100/000000/clear-symbol--v1.png" alt = "button to clear list"></button>
-            <button id = "get-help"> Как это работает <img src="https://s1.iconbird.com/ico/0612/MustHave/w256h2561339195771Help256x256.png" alt = "button to get info"></button>
+            <button id="clear-button" onclick="clearList()"> Очистить список <img src="https://img.icons8.com/carbon-copy/100/000000/clear-symbol--v1.png" alt = "Очистить список"></button>
+            <button id="get-help" onclick="openInfo()"> Как это работает <img src="https://s1.iconbird.com/ico/0612/MustHave/w256h2561339195771Help256x256.png" alt = "Помощь"></button>
     </div>
         
     <div class="forms">
-            <input type="text" id="input" placeholder="еще одно важное дельце" onchange="addTask()" size=50>
+            <input type="text" id="input" placeholder="еще одно важное дело" onchange="addTask()" size=50>
             <input type="submit" value="Добавить дело">
 
     </div>
     <div id="info">
-        Здесь будет справка
+        <ul> 
+            <li>Чтобы добавить новый</li>
+            <li>Для добавления списка дел напишите текст в поле ввода и нажмите Ввод</li>
+            <li>Чтобы удалить один пункт, наведите на него и нажмите на значок корзины</li>
+            <li>Чтобы удалить все списки дел, нажмите "Очистить"</li>
+            <li>Нажмите "Сохранить", чтобы сохранить список дел на потом</li>
+        </ul>
         <button id="help-btn" onclick="closeInfo()"> 
             Закрыть 
         </button>
